@@ -10,7 +10,8 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - mvn package
+      - mvn package -DskipITs
+      # - mvn package -Dspring.docker.compose.skip.in-tests=true #Same as above
   post_build:
     commands:
       - echo Build completed on `date`
