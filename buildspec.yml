@@ -11,10 +11,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo "Building without integration tests or Docker"
-      - mvn -B clean package \
-        -DskipTests \
-        -Dspring.docker.compose.enabled=false \
-        -Dspring.docker.compose.skip.in-tests=true
+      - mvn -B clean package -DskipTests -Dspring.docker.compose.enabled=false -Dspring.docker.compose.skip.in-tests=true
   post_build:
     commands:
       - echo Build completed on `date`
